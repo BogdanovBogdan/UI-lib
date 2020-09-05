@@ -1,33 +1,33 @@
-$.prototype.addClass = function(...classNames) {	
-	for (let i = 0; i < this.length; i++) {
-		if (this[i].classList) {
-			this[i].classList.add(...classNames)
-		}
-	}
+$.prototype.addClass = function(...classNames) {
+  for (let i = 0; i < this.length; i++) {
+    if (this[i].classList) {
+      this[i].classList.add(...classNames)
+    }
+  }
 
-	return this
+  return this
 }
 
 $.prototype.removeClass = function(...classNames) {
-	for (let i = 0; i < this.length; i++) {
-		if (this[i].classList) {
-			this[i].classList.remove(...classNames)
-		}
-	}
+  for (let i = 0; i < this.length; i++) {
+    if (this[i].classList) {
+      this[i].classList.remove(...classNames)
+    }
+  }
 
-	return this
+  return this
 }
 
 $.prototype.toggleClass = function(className) {
-	for (let i = 0; i < this.length; i++) {
-		if (this[i].classList) {
-			if (this[i].classList.contains(className)) {
-				this[i].classList.remove(className)
-			} else {
-				this[i].classList.add(className)
-			}
-		}
-	}
+  for (let i = 0; i < this.length; i++) {
+    if (this[i].classList) {
+      if (this[i].classList.contains(className)) {
+        this[i].classList.remove(className)
+      } else {
+        this[i].classList.add(className)
+      }
+    }
+  }
 
-	return this
+  return this
 }
