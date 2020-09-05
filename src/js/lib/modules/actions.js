@@ -13,7 +13,7 @@ $.prototype.html = function(content = null) {
 }
 
 $.prototype.eq = function(n) {
-  if (!n) return this;
+  if (n === 'undefined') return this;
   if (!this[n]) console.error("[Error]: this item doesn't exist")
   else {
     const needEl = this[n];
@@ -54,6 +54,47 @@ $.prototype.find = function(selector) {
       this[numElems] = arr[j];
       numElems++;
     }
+  }
+
+  this.length = numElems;
+
+  const objLength = Object.keys(copyObj).length;
+  for (; numElems < objLength; numElems++) {
+    delete this[numElems]
+  }
+
+  return this;
+}
+
+$.prototype.closest = function(selector) {
+  let counter = 0;
+
+  for (let i = 0; i < this.length; i++) {
+    this[i] = this[i].closest(selector) || this[i];
+    counter++;
+  }
+
+  const objLength = Object.keys(this).length;
+  for(; counter < objLength; counter++) {
+    delete this[counter];
+  }
+
+  return this;
+}
+
+// Search for the first element only
+$.prototype.siblings = function() {
+  const copyObj = Object.assign({}, this);
+  let numElems = 0;
+
+  const initEl = copyObj[0];
+
+  let arr = initEl.parentNode.children;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (copyObj[0] === arr[i]) continue;
+    this[numElems] = arr[i];
+    numElems++;
   }
 
   this.length = numElems;
