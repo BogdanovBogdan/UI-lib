@@ -70,9 +70,18 @@ $.prototype.closest = function(selector) {
   let counter = 0;
 
   for (let i = 0; i < this.length; i++) {
-    this[i] = this[i].closest(selector) || this[i];
-    counter++;
+    if (this[i].closest(selector)) {
+      this[i] = this[i].closest(selector)
+      counter++;
+    }
   }
+
+  if (!counter) {
+    console.warn(`not found elements with selector ${selector}`)
+    return this;
+  }
+
+  this.length = counter;
 
   const objLength = Object.keys(this).length;
   for(; counter < objLength; counter++) {
