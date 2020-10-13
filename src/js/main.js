@@ -14,5 +14,5 @@ import $ from './lib/core';
 //   console.log($(this).index())
 // })
 
-console.log($('.need').closest('.lifst'));
+console.log($('.need').siblings());
 
