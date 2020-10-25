@@ -1,3 +1,5 @@
+import $ from '../core';
+
 $.prototype.attr = function(nameAttr, valueAttr) {
   if (nameAttr && valueAttr) {
     if (!nameAttr.includes('data-')) {

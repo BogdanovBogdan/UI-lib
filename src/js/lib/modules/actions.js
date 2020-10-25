@@ -1,4 +1,4 @@
-const { default: $ } = require("../core")
+import $ from '../core';
 
 $.prototype.html = function(content = null) {
   for (let i = 0; i < this.length; i++) {

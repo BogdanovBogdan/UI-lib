@@ -1,3 +1,5 @@
+import $ from '../core';
+
 $.prototype.on = function(eventName, callback) {
   if (eventName && callback) {
     for (let i = 0; i < this.length; i++) {
