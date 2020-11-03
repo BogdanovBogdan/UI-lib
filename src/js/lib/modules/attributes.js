@@ -8,10 +8,16 @@ $.prototype.attr = function(nameAttr, valueAttr) {
     }
 
     for (let i = 0; i < this.length; i++) {
-      this[i].setAttribute(`data-${nameAttr}`, valueAttr);
+      this[i].setAttribute(nameAttr, valueAttr);
     }
-  }
+  } else if (nameAttr && !valueAttr) {
+    if (!nameAttr.includes('data-')) {
+      console.error(`Invalid attribute: ${nameAttr}\nData attribute must start with "data-"`);
+      return;
+    }
 
+      return this[0].getAttribute(nameAttr);
+  }
   return this;
 }
 
