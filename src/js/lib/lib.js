@@ -7,5 +7,6 @@ import './modules/display'
 import './modules/effects'
 import './modules/handlers'
 import './components/dropdown'
+import './components/modal'
 
 export default $
