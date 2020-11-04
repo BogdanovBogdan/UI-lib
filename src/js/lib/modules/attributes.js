@@ -15,8 +15,9 @@ $.prototype.attr = function(nameAttr, valueAttr) {
       console.error(`Invalid attribute: ${nameAttr}\nData attribute must start with "data-"`);
       return;
     }
-
-      return this[0].getAttribute(nameAttr);
+    let getAttr = this[0].getAttribute(nameAttr);
+    if (getAttr === '') getAttr = true;
+    return getAttr;
   }
   return this;
 }
