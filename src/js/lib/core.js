@@ -16,7 +16,7 @@ $.prototype.init = function(selector) {
   const el = document.querySelectorAll(selector)
 
   if (!el.length) {
-    console.error(`Elements with class ${selector} were not found`);
+    console.error(`Elements with selector ${selector} were not found`);
     return;
   }
 
