@@ -8,5 +8,6 @@ import './modules/effects'
 import './modules/handlers'
 import './components/dropdown'
 import './components/modal'
+import './components/tabs'
 
 export default $

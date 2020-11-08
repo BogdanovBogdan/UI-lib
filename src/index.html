@@ -1,42 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Library</title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-	<div class="container">
-		<a href="#">Link to ...</a>
-		<div class="first-block">First block</div>
-		<ul class="list">
-			<ol>List item</ol>
-			<ol>List item</ol>
-			<ol class="need">List item 1</ol>
-			<!-- <ol class="need">List item 2</ol> -->
-			<ol>List item</ol>
-			<ol>List item</ol>
-		</ul>
-		<ul>
-			<ol>List item</ol>
-			<ol class="need">List item</ol>
-			<ol>List item</ol>
-			<ol>List item</ol>
-			<ol>List item</ol>
-		</ul>
-		<div class="Second block">Second block</div>
-		<a href="#">Yet unknown link</a>
-	</div>
-	<div>1</div>
-	<div class="active">2</div>
-	<div>3</div>
-	<button class="add-attribute">Add attr</button>
-	<button class="remove-attribute">Remove attrs</button>
-	<script src='script.js'></script>
-</body>
 
+    <div class="container">
+
+        <!-- Dropdown menu -->
+        <div class="dropdown m20">
+            <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton">Dropdown button</button>
+            <div class="dropdown-menu" data-toggle-id="dropdownMenuButton">
+                <a href="#" class="dropdown-item">Action</a>
+                <a href="#" class="dropdown-item">Action #2</a>
+                <a href="#" class="dropdown-item">Action #3</a>
+            </div>
+        </div>
+
+
+        <!-- Modal -->
+        <a href="#" class="btn btn-primary m20" data-toggle="modal" data-target="#modal1">Open modal 1</a>
+        <a href="#" class="btn btn-primary m20" data-toggle="modal" data-target="#modal2">Open modal 2</a>
+        <a href="#" class="btn btn-primary m20" data-toggle="modal" data-target="#modal3">Open modal 3</a>
+
+        <div class="overlay">
+
+          <div class="modal" id="modal1">
+            <h4 class="modal-title">Modal Title</h4>
+            <div class="modal-body">
+              <p class="modal-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci distinctio labore ab laborum maiores consequatur quos minus rerum, similique dignissimos autem porro incidunt quas maxime tempora eos deserunt vitae alias!</p>
+            </div>
+            <div class="modal-action">
+              <button class="btn btn-danger" data-close>close</button>
+              <button class="btn btn-success">save</button>
+            </div>
+            <button class="modal-close" data-close>&times;</button>
+          </div>
+
+          <div class="modal" id="modal2">
+            <h4 class="modal-title">Modal Title</h4>
+            <div class="modal-body">
+              <p class="modal-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci distinctio labore ab laborum maiores consequatur quos minus rerum, similique dignissimos autem porro incidunt quas maxime tempora eos deserunt vitae alias!</p>
+            </div>
+            <div class="modal-action">
+              <button class="btn btn-danger" data-close>close</button>
+              <button class="btn btn-success">save</button>
+            </div>
+            <button class="modal-close" data-close>&times;</button>
+          </div>
+
+          <div class="modal" id="modal3">
+            <h4 class="modal-title">Modal Title</h4>
+            <div class="modal-body">
+              <p class="modal-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci distinctio labore ab laborum maiores consequatur quos minus rerum, similique dignissimos autem porro incidunt quas maxime tempora eos deserunt vitae alias!</p>
+            </div>
+            <div class="modal-action">
+              <button class="btn btn-danger" data-close>close</button>
+              <button class="btn btn-success">save</button>
+            </div>
+            <button class="modal-close" data-close>&times;</button>
+          </div>
+
+        </div>
+
+        <!-- Tabs -->
+        <div class="tab mt-20 block-center">
+          <div class="tab-panel" data-tabpanel>
+            <div class="tab-item tab-item--active">Content 1</div>
+            <div class="tab-item">Content 2</div>
+            <div class="tab-item">Content 3</div>
+          </div>
+          <div class="tab-content tab-content--active">
+            1. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat laboriosam blanditiis omnis? Ab molestias tempora beatae ex itaque cumque, velit modi, molestiae debitis earum dolor quae quis. Ipsum, omnis voluptatem!
+            <br> <br>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet voluptates ipsum delectus vitae similique earum veniam? Odit soluta quibusdam laudantium molestias perferendis ad voluptates, earum ea deserunt architecto provident ipsum.
+          </div>
+          <div class="tab-content">
+            2. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat laboriosam blanditiis omnis? Ab molestias tempora beatae ex itaque cumque, velit modi, molestiae debitis earum dolor quae quis. Ipsum, omnis voluptatem!
+            <br> <br>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet voluptates ipsum delectus vitae similique earum veniam? Odit soluta quibusdam laudantium molestias perferendis ad voluptates, earum ea deserunt architecto provident ipsum.
+            <br> <br>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet voluptates ipsum delectus vitae similique earum veniam? Odit soluta quibusdam laudantium molestias perferendis ad voluptates, earum ea deserunt architecto provident ipsum.
+          </div>
+          <div class="tab-content">
+            3. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat laboriosam blanditiis omnis? Ab molestias tempora beatae ex itaque cumque, velit modi, molestiae debitis earum dolor quae quis. Ipsum, omnis voluptatem!
+          </div>
+        </div>
+
+    </div>
+
+    <script src='script.js'></script>
+</body>
 </html>
