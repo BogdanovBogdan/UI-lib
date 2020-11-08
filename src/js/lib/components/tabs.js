@@ -40,16 +40,14 @@ $.prototype.tabs1 = function() {
 $.prototype.tabs2 = function() {
   for (let i = 0; i < this.length; i++) {
     $(this[i]).click(({ target }) => {
-      console.log(
-        $(target)
-          .addClass('tab-item--active')
-          .siblings().removeClass('tab-item--active')
-          .closest('.tab').eq(0)
-          .find('.tab-content')
-          .eq($(target).index())
-          .addClass('tab-content--active')
-          .siblings().removeClass('tab-content--active')
-      )
+      $(target)
+        .addClass('tab-item--active')
+        .siblings().removeClass('tab-item--active')
+        .closest('.tab').eq(0)
+        .find('.tab-content')
+        .eq($(target).index())
+        .addClass('tab-content--active')
+        .siblings().removeClass('tab-content--active')
       })
   }
 }
