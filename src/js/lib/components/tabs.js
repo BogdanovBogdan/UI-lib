@@ -1,11 +1,15 @@
 import $ from '../core';
 
-$.prototype.tabs = function() {
+// option 1
+
+$.prototype.tabs1 = function() {
   for (let i = 0; i < this.length; i++) {
     const tabItems = $(this[i]).find('.tab-item');
     const contentItems = $(this[i]).find('.tab-content');
 
     function onClick({ target }, index) {
+
+
       const targetTab = target;
       const siblingsTab = $(targetTab).siblings();
       const targetContent = contentItems[index];
@@ -28,4 +32,26 @@ $.prototype.tabs = function() {
   }
 }
 
-$('.tab').tabs();
+// $('.tab').tabs1();
+
+
+// option 2
+
+$.prototype.tabs2 = function() {
+  for (let i = 0; i < this.length; i++) {
+    $(this[i]).click(({ target }) => {
+      console.log(
+        $(target)
+          .addClass('tab-item--active')
+          .siblings().removeClass('tab-item--active')
+          .closest('.tab').eq(0)
+          .find('.tab-content')
+          .eq($(target).index())
+          .addClass('tab-content--active')
+          .siblings().removeClass('tab-content--active')
+      )
+      })
+  }
+}
+
+$('.tab').tabs2();
